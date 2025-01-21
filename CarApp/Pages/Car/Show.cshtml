@@ -1,0 +1,45 @@
+﻿@page
+@model CarApp.Pages.Car.ShowModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">Car Details</h3>
+                </div>
+                <div class="card-body">
+                    <dl class="row mt-4">
+                        <dt class="col-sm-4 text-end fw-bold">
+                            Brand
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Cars.CarManufacturer)
+                        </dd>
+
+                        <dt class="col-sm-4 text-end fw-bold">
+                            Model
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Cars.CarModel)
+                        </dd>
+
+                        <dt class="col-sm-4 text-end fw-bold">
+                            Year
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Cars.CarYom)
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-page="./Index" class="btn btn-outline-secondary">Back</a>
+                    <a asp-page="./Edit" asp-route-id="@Model.Cars.CarId" class="btn btn-primary">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

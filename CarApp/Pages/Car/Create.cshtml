@@ -1,0 +1,46 @@
+﻿@page
+@model CarApp.Pages.Car.CreateModel
+@{
+    ViewData["Title"] = "Create Car";
+}
+
+<h1 class="display-4 text-center mb-4">Create Car</h1>
+<hr class="mb-4" />
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+            <div class="mb-3">
+                <label asp-for="Cars.CarManufacturer" class="form-label">Brand</label>
+                <input asp-for="Cars.CarManufacturer" class="form-control" />
+                <span asp-validation-for="Cars.CarManufacturer" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Cars.CarModel" class="form-label">Model</label>
+                <input asp-for="Cars.CarModel" class="form-control" />
+                <span asp-validation-for="Cars.CarModel" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Cars.CarYom" class="form-label">Year</label>
+                <input asp-for="Cars.CarYom" class="form-control" />
+                <span asp-validation-for="Cars.CarYom" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-page="Index" class="btn btn-outline-danger">Back</a>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+@{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}
